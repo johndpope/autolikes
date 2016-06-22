@@ -13,7 +13,7 @@
 //     //create the admin role
 //     Role.findOrCreate({
 //       name: 'client',
-//       description: 'Has access to authorize organizations'
+//       description: 'Has access to authorized organizations'
 //     }, function(err, role) {
 //       if (err) throw err;
 

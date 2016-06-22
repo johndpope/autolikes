@@ -7,6 +7,10 @@ module.exports = function(InstagramAccount) {
    * Disable methods that are not necessary.
    */
   InstagramAccount.disableRemoteMethod('create', true);
+  InstagramAccount.disableRemoteMethod('updateAttributes', false);
+  InstagramAccount.disableRemoteMethod('updateAll', true);
+  InstagramAccount.disableRemoteMethod('upsert', true);
+  InstagramAccount.disableRemoteMethod('exists', true);
   InstagramAccount.disableRemoteMethod('createChangeStream', true);
 
   /**
@@ -14,7 +18,7 @@ module.exports = function(InstagramAccount) {
    */
   InstagramAccount.beforeRemote('prototype.updateAttributes', function(ctx, client, next) {
     var body = ctx.req.body;
-    body.updatedAt = new Date();
+    body.updated = new Date();
     next();
   });
 
@@ -33,8 +37,8 @@ module.exports = function(InstagramAccount) {
   // InstagramAccount.validatesPresenceOf('instagramSettingsId');
 
   /**
-   * InstagramAccount.Sync()
-   * Create or update an InstagramAccount model using the Instagram API Auth.
+   * InstagramAccount.connect()
+   * Create or update an InstagramAccount model using the Instagram API.
    * https://github.com/totemstech/instagram-node
    */
 
@@ -45,7 +49,7 @@ module.exports = function(InstagramAccount) {
    * https://www.instagram.com/oauth/authorize/?client_id=6e83065781374927a7dafe23d05a9fb1&redirect_uri=http://localhost:3000/&response_type=code
    */
 
-  InstagramAccount.sync = function(credentials, cb) {
+  InstagramAccount.connect = function(credentials, cb) {
     var body = {};
     var code = credentials.code;
 
@@ -91,17 +95,17 @@ module.exports = function(InstagramAccount) {
   /**
    * Declare Sync remote method interface
    */
-  InstagramAccount.remoteMethod('sync', {
-    description: 'Get Instagram access token using auth code',
+  InstagramAccount.remoteMethod('connect', {
+    description: 'Create InstagramAccount model with a valid token using authorization exchange code',
     accepts: {
       arg: 'credentials',
       type: 'object',
       required: true,
       http: { source: 'body' },
-      description: 'Get a valid code from the oauth url'
+      description: 'Get a valid authorization exchange code from Instagram oauth url'
     },
     returns: { arg: 'instagramAccount', type: 'object', root: true },
-    http: { verb: 'post' }
+    http: { path: '/', verb: 'post' }
   });
 
 };

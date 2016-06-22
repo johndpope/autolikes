@@ -14,12 +14,12 @@
       "id": true,
       "defaultFn": "uuid"
     },
-    "createdAt": {
+    "created": {
       "type": "date",
       "required": true,
       "defaultFn": "now"
     },
-    "updatedAt": {
+    "updated": {
       "type": "date",
       "required": true,
       "defaultFn": "now"

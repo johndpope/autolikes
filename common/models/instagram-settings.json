@@ -6,58 +6,49 @@
   "options": {
     "validateUpsert": true
   },
+  "postgresql": {
+    "schema": "public",
+    "table": "instagram_settings"
+  },
   "properties": {
     "id": {
       "type": "string",
       "id": true,
       "defaultFn": "uuid"
     },
-    "personalNewsFeed": {
+    "personalFeed": {
       "type": "boolean"
     },
     "popularFeed": {
       "type": "boolean"
     },
     "tags": {
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "locations": {
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "users": {
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "tagsBlacklist": {
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "usersBlacklist": {
-      "type": [
-        "object"
-      ]
+      "type": ["object"]
     },
     "likesPerHour": {
       "type": "number",
       "required": true,
       "default": 50
     },
-    "likesPerUserPerDay": {
+    "likesPerUserDay": {
       "type": "number",
       "required": true,
       "default": 3
     },
-    "timezoneId": {
-      "type": "string"
-    },
-    "timezoneOffset": {
-      "type": "number"
+    "timezone": {
+      "type": "object"
     },
     "startTime": {
       "type": "number",
@@ -68,6 +59,11 @@
       "type": "number",
       "min": 0,
       "max": 23
+    },
+    "updated": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
     }
   },
   "validations": [],

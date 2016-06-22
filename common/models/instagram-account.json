@@ -6,6 +6,10 @@
   "options": {
     "validateUpsert": true
   },
+  "postgresql": {
+    "schema": "public",
+    "table": "instagram_account"
+  },
   "properties": {
     "id": {
       "type": "string",
@@ -41,14 +45,15 @@
     },
     "likesGiven": {
       "type": "number",
+      "required": true,
       "default": 0
     },
-    "createdAt": {
+    "created": {
       "type": "date",
       "required": true,
       "defaultFn": "now"
     },
-    "updatedAt": {
+    "updated": {
       "type": "date",
       "required": true,
       "defaultFn": "now"
