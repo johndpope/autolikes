@@ -16,8 +16,8 @@ module.exports = function(InstagramAccount) {
   InstagramAccount.validatesPresenceOf('instagramSettingsId');
 
   /**
-   * Sync
-   * Create a new InstagramAccount model using the Instagram API Auth.
+   * InstagramAccount.Sync()
+   * Create or update an InstagramAccount model using the Instagram API Auth.
    */
 
   InstagramAccount.sync = function(cb) {
@@ -25,13 +25,18 @@ module.exports = function(InstagramAccount) {
   }
 
   InstagramAccount.remoteMethod('sync', {
-    accepts: [
-      { arg: 'username', type: 'string', required: true },
-      { arg: 'password', type: 'string', required: true }
-    ],
+    description: 'Login to an Instagram Account with username and password.',
+    accepts: {
+      arg: 'credentials',
+      type: 'object',
+      required: true,
+      http: { source: 'body' },
+      description: 'Instagram username and password are required.'
+    },
     returns: [
       { arg: 'instagramAccount', type: 'object' }
-    ]
+    ],
+    http: { verb: 'post' }
   });
 
 };
