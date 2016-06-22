@@ -39,6 +39,10 @@
     "counts": {
       "type": "object"
     },
+    "likesGiven": {
+      "type": "number",
+      "default": 0
+    },
     "createdAt": {
       "type": "date",
       "required": true,
@@ -65,5 +69,10 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "mixins": {
+    "ReadOnly" : {
+      "likesGiven" : true
+    }
+  }
 }
