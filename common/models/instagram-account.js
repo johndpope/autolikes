@@ -65,7 +65,7 @@ module.exports = function(InstagramAccount) {
           if (err) {
             cb(null, err.body);
           } else {
-            InstagramAccount.create({
+            InstagramAccount.upsert({
               accessToken: accessToken,
               id: result.id,
               username: result.username,
