@@ -29,28 +29,14 @@
       "required": true
     },
     "bio": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "website": {
       "type": "string",
       "required": true
     },
-    "countMedia": {
-      "type": "number",
-      "required": true
-    },
-    "countFollows": {
-      "type": "number",
-      "required": true
-    },
-    "countFollowedBy": {
-      "type": "number",
-      "required": true
-    },
-    "startCountFollowedBy": {
-      "type": "number",
-      "required": true
+    "counts": {
+      "type": "object"
     },
     "createdAt": {
       "type": "date",
