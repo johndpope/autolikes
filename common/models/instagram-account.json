@@ -1,0 +1,81 @@
+{
+  "name": "InstagramAccount",
+  "plural": "InstagramAccounts",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "accessToken": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "profilePicture": {
+      "type": "string",
+      "required": true
+    },
+    "bio": {
+      "type": "string",
+      "required": true
+    },
+    "website": {
+      "type": "string",
+      "required": true
+    },
+    "countMedia": {
+      "type": "number",
+      "required": true
+    },
+    "countFollows": {
+      "type": "number",
+      "required": true
+    },
+    "countFollowedBy": {
+      "type": "number",
+      "required": true
+    },
+    "startCountFollowedBy": {
+      "type": "number",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "updatedAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId"
+    },
+    "settings": {
+      "type": "hasOne",
+      "model": "InstagramSettings",
+      "foreignKey": "instagramAccountId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

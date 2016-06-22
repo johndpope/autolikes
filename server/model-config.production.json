@@ -1,0 +1,38 @@
+{
+  "User": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "Client": {
+    "dataSource": "prod_db",
+    "public": true
+  },
+  "Organization": {
+    "dataSource": "prod_db",
+    "public": false
+  },
+  "InstagramAccount": {
+    "dataSource": "prod_db",
+    "public": true
+  },
+  "InstagramSettings": {
+    "dataSource": "prod_db",
+    "public": false
+  }
+}

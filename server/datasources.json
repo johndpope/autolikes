@@ -1,0 +1,12 @@
+{
+  "dev_db": {
+    "host": "ec2-54-235-240-76.compute-1.amazonaws.com",
+    "port": 5432,
+    "database": "d44jidpai8fo8p",
+    "password": "ubX99iqJAuAC2yrZWm4_Gv3Pey",
+    "name": "dev_db",
+    "user": "qgeyfcifdvbqun",
+    "connector": "postgresql",
+    "ssl": true
+  }
+}

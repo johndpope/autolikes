@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "Client": {
+    "dataSource": "dev_db",
+    "public": true
+  },
+  "Organization": {
+    "dataSource": "dev_db",
+    "public": false
+  },
+  "InstagramAccount": {
+    "dataSource": "dev_db",
+    "public": true
+  },
+  "InstagramSettings": {
+    "dataSource": "dev_db",
+    "public": false
+  }
+}

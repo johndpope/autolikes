@@ -1,0 +1,77 @@
+{
+  "name": "InstagramSettings",
+  "plural": "InstagramSettings",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "defaultFn": "uuid"
+    },
+    "personalNewsFeed": {
+      "type": "boolean"
+    },
+    "popularFeed": {
+      "type": "boolean"
+    },
+    "tags": {
+      "type": [
+        "object"
+      ]
+    },
+    "locations": {
+      "type": [
+        "object"
+      ]
+    },
+    "users": {
+      "type": [
+        "object"
+      ]
+    },
+    "tagsBlacklist": {
+      "type": [
+        "object"
+      ]
+    },
+    "usersBlacklist": {
+      "type": [
+        "object"
+      ]
+    },
+    "likesPerHour": {
+      "type": "number",
+      "required": true,
+      "default": 50
+    },
+    "likesPerUserPerDay": {
+      "type": "number",
+      "required": true,
+      "default": 3
+    },
+    "timezoneId": {
+      "type": "string"
+    },
+    "timezoneOffset": {
+      "type": "number"
+    },
+    "startTime": {
+      "type": "number",
+      "min": 0,
+      "max": 23
+    },
+    "endTime": {
+      "type": "number",
+      "min": 0,
+      "max": 23
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
