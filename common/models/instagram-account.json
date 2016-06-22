@@ -18,7 +18,8 @@
     },
     "username": {
       "type": "string",
-      "required": true
+      "required": true,
+      "index": true
     },
     "fullName": {
       "type": "string",
@@ -49,6 +50,7 @@
       "defaultFn": "now"
     }
   },
+  "hidden": ["accessToken"],
   "validations": [],
   "relations": {
     "organization": {

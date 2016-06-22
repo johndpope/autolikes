@@ -1,3 +1,4 @@
+// Import instagram-node lib
 const ig = require('../../server/instagram');
 
 module.exports = function(InstagramAccount) {
