@@ -15,4 +15,23 @@ module.exports = function(InstagramAccount) {
   InstagramAccount.validatesPresenceOf('organizationId');
   InstagramAccount.validatesPresenceOf('instagramSettingsId');
 
+  /**
+   * Sync
+   * Create a new InstagramAccount model using the Instagram API Auth.
+   */
+
+  InstagramAccount.sync = function(cb) {
+    // https://github.com/totemstech/instagram-node
+  }
+
+  InstagramAccount.remoteMethod('sync', {
+    accepts: [
+      { arg: 'username', type: 'string', required: true },
+      { arg: 'password', type: 'string', required: true }
+    ],
+    returns: [
+      { arg: 'instagramAccount', type: 'object' }
+    ]
+  });
+
 };
