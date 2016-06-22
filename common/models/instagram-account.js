@@ -12,6 +12,8 @@ module.exports = function(InstagramAccount) {
   InstagramAccount.disableRemoteMethod('upsert', true);
   InstagramAccount.disableRemoteMethod('exists', true);
   InstagramAccount.disableRemoteMethod('createChangeStream', true);
+  InstagramAccount.disableRemoteMethod('__create__settings', false);
+  InstagramAccount.disableRemoteMethod('__destroy__settings', false);
 
   /**
    * Update the property updatedAt every time the model is saved
